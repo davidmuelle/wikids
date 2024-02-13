@@ -23,16 +23,16 @@ class Mostrarpost extends Component
         
         $posts=Post::all();
         $categorias=Categoria::all();
-        $id=$this->id;
-        return view('livewire.mostrarpost',compact('posts','categorias','id'));
+        $openeditar=$this->openeditar;
+        return view('livewire.mostrarpost',compact('posts','categorias','openeditar'));
     }
 
     protected function rules():array {
         return[
-        'mipost.titulo' => ['required','string','min:3'],
-        'mipost.subtitulo'=>['required','string','min:3'],
-         'mipost.contenido'=>['required','string'],
-        'mipost.categoria_id'=>['required', 'exists:categorias,id'],
+        'titulo' => ['required','string','min:3'],
+        'subtitulo'=>['required','string','min:3'],
+         'contenido'=>['required','string'],
+        'categoria_id'=>['required', 'exists:categorias,id'],
         'imagen'=>['nullable','max:2048']
 
     ];
@@ -65,7 +65,6 @@ class Mostrarpost extends Component
             'user_id'=>auth()->user()->id,
             'imagen'=>$ruta
         ]);
-        $this->mipost=new Post;
         $this->cancelar();
     }
 

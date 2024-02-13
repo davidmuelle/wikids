@@ -72,29 +72,28 @@
                 </div>
             @endforeach
 
-            @if ($mipost)
-
+            @isset($mipost)
 
                 <x-dialog-modal wire:model="openeditar">
                     <x-slot name="title">
-                        editar coche
+                        editar post
                     </x-slot>
 
                     <x-slot name="content">
                         <x-form>
 
-                            @bind($mipost, 'defer')
-                                <p>{{ $mipost }}</p>
+                            @bind($mipost , 'defer')
+                                <p>{{ $mipost->contenido }}</p>
                                 <x-form-input name="mipost.titulo" value="{{ $mipost->titulo }}" label="titulo" />
                                 <x-form-input name="mipost.subtitulo" value="{{ $mipost->subtitulo }}" label="subtitulo" />
 
 
-                                <x-form-textarea rows='4' name="mipost.contenido" value="{{ $mipost->contenido }}"
-                                    label="contenido" placeholder="contenido...">
-                                    @if ($mipost->contenido)
-                                        {{ $mipost->contenido }}
-                                    @endif
-                                </x-form-textarea>
+                                {{-- <x-form-textarea rows='4' name="contenido" value="{{$mipost->contenido}}"
+                                    label="contenido" placeholder="contenido..."/> --}}
+                                   
+                                    <textarea class="w-full mt-3"  name="mipost.contenido"  value="{{$mipost->contenido}}">{{$mipost->contenido}}</textarea>
+                                    
+                                
 
                                 <x-form-group name="postt.categoria_id" label="categoria del post" inline>
                                     @foreach ($categorias as $categoria)
@@ -128,7 +127,7 @@
                         </button>
                     </x-slot>
                 </x-dialog-modal>
-            @endif
+                @endisset
 
 
         </div>
