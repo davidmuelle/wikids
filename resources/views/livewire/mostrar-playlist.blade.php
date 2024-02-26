@@ -28,7 +28,7 @@
                                     <div class="max-w-80 overflow-hidden cursor-pointer">
                                         <img class="w-full rounded max-md:hidden md:block hover:scale-125 transition-all duration-500"
                                             src="{{ $cancionn->imagen }}" alt="Album Pic">
-
+<p>{{ $cancionn->imagen }}</p>
                                     </div>
                                     <div class="w-full p-8">
                                         <div class="flex justify-between ">

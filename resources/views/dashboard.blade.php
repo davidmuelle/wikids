@@ -1,14 +1,19 @@
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot  name="header">
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 class=" font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Inicio') }}
         </h2>
     </x-slot>
 
     <div class='py-12'>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-gray-300 overflow-hidden shadow-xl sm:rounded-lg h-auto">
+        <div class=" max-w-7xl mx-auto sm:px-6 lg:px-8 ">
+             {{-- <div class="z-10  rounded sticky top-20 bg-no-repeat bg-cover bg-[url('/storage/playlist/cuatro_reyes.webp')] w-full h-96">
+
+            </div>  --}}
+
+            <img class="rounded-t-lg sticky top-[170px] w-full " src="https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_DarkSoulsRemastered.jpg" alt="">
+            <div  class="bg-gray-300 rounded-b-lg relative overflow-hidden shadow-xl sm:rounded-b-lg h-auto">
                 <img class="m-auto"src="https://images.hive.blog/0x0/https://fotos.subefotos.com/27dbb38508d6f1c4b2b71c4aa123d78bo.png"
                     width="350" height="60" alt="Wiki Dark Souls">
 
