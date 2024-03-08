@@ -38,7 +38,11 @@ class DatabaseSeeder extends Seeder
         $this->call(PlaylistSeeder::class);
         Storage::deleteDirectory("/posts");
         Storage::createDirectory("/posts");
-
+        
         Post::factory(10)->create();
+        
+        Storage::deleteDirectory("/boss");
+        Storage::createDirectory("/boss");
+
     }
 }

@@ -12,9 +12,9 @@
 
             </div>  --}}
 
-            <img class="rounded-t-lg sticky top-[170px] w-full " src="https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_DarkSoulsRemastered.jpg" alt="">
+            <img class="rounded-t-lg sticky top-[185px] w-full " src="https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/H2x1_NSwitch_DarkSoulsRemastered.jpg" alt="">
             <div  class="bg-gray-300 rounded-b-lg relative overflow-hidden shadow-xl sm:rounded-b-lg h-auto">
-                <img class="m-auto"src="https://images.hive.blog/0x0/https://fotos.subefotos.com/27dbb38508d6f1c4b2b71c4aa123d78bo.png"
+                <img loading="lazy" class="m-auto"src="https://images.hive.blog/0x0/https://fotos.subefotos.com/27dbb38508d6f1c4b2b71c4aa123d78bo.png"
                     width="350" height="60" alt="Wiki Dark Souls">
 
 

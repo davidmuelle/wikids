@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="sticky top-0 z-50 bg-gray-450 border-b border-gray-450">
+<nav x-data="{ open: false }" class="sticky top-0 z-50 bg-zinc-800 border-b border-gray-450">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div class="flex justify-between h-16">
@@ -24,6 +24,14 @@
                     <x-nav-link  href="{{ route('Playlist') }}" :active="request()->routeIs('Playlist')">
                         {{ __('Playlist') }}
                     </x-nav-link>
+                    <x-nav-link  href="{{ route('Boss') }}" :active="request()->routeIs('Boss')">
+                        {{ __('Bosses') }}
+                    </x-nav-link>
+                    @role('admin')
+                    <x-nav-link  href="{{ route('users') }}" :active="request()->routeIs('users')">
+                        {{ __('Users') }}
+                    </x-nav-link>
+                    @endrole
                 </div>
             </div>
 

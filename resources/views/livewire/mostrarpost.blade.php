@@ -1,5 +1,5 @@
 <div>
-    <x-app-layout>
+    
         <x-slot name="header">
 
             <div class="flex gap-6 ">
@@ -21,7 +21,7 @@
                     <div class="h-48 w-15 rounded-t-lg flex justify-center ">
 
                         <img class="h-full w-full  rounded  md:block hover:scale-125 transition-all duration-500"
-                            src="{{ $post->imagen }}" alt="Album Pic">
+                        loading="lazy" src="{{ $post->imagen }}" alt="Album Pic">
                     </div>
                     <div>
                         <div class="pt-3 flex justify-around">
@@ -72,64 +72,79 @@
                 </div>
             @endforeach
 
-            @isset($mipost)
+            @isset($form->post)
 
                 <x-dialog-modal wire:model="openeditar">
                     <x-slot name="title">
-                        editar post
+                        Actualizar Post
                     </x-slot>
-
                     <x-slot name="content">
-                        <x-form>
+        
+                        <x-label for="titulo">Título</x-label>
+                        <x-input type="text" id="titulo" placeholder="Título" class="w-full mb-3" wire:model="form.titulo" />
+                        <x-input-error for="form.titulo" />
+        
+                        <x-label for="sinopsis">Subtitulo</x-label>
+                        <x-input type="text" id="subtitulo" placeholder="Subtítulo" class="w-full mb-3" wire:model="form.subtitulo" />
+                        <x-input-error for="form.subtitulo" />
 
-                            @bind($mipost , 'defer')
-                                <p>{{ $mipost->contenido }}</p>
-                                <x-form-input name="mipost.titulo" value="{{ $mipost->titulo }}" label="titulo" />
-                                <x-form-input name="mipost.subtitulo" value="{{ $mipost->subtitulo }}" label="subtitulo" />
 
-
-                                {{-- <x-form-textarea rows='4' name="contenido" value="{{$mipost->contenido}}"
-                                    label="contenido" placeholder="contenido..."/> --}}
-                                   
-                                    <textarea class="w-full mt-3"  name="mipost.contenido"  value="{{$mipost->contenido}}">{{$mipost->contenido}}</textarea>
-                                    
-                                
-
-                                <x-form-group name="postt.categoria_id" label="categoria del post" inline>
-                                    @foreach ($categorias as $categoria)
-                                        @if ($categoria->id == $mipost->categoria_id)
-                                            <x-form-radio name="mipost.categoria_id" checked="checked"
-                                                value="{{ $categoria->id }}" label="{{ $categoria->nombre }}" />
-                                        @else
-                                            <x-form-radio name="mipost.categoria_id" value="{{ $categoria->id }}"
-                                                label="{{ $categoria->nombre }}" />
-                                        @endif
-                                    @endforeach
-                                </x-form-group>
-                            @endbind
-                            <label for="imagen">introduzca imagen</label>
-                            @if ($imagen)
-                                <img src="{{ $imagen->temporaryUrl() }}" alt="imagen del usuario">
+                        <x-label for="sinopsis">Contenido</x-label>
+                       
+                        <textarea class="w-full mb-3" placeholder="contenido..." id="contenido" wire:model="form.contenido"></textarea>
+                        <x-input-error for="form.contenido" />
+                        
+                        <x-label for="categoria_id">Categoría</x-label>
+                         <select id="categoria_id" class="w-full mb-3" wire:model="form.categoria_id">
+                            <option>Selecciona una categoría....</option>
+                            @foreach ($categorias as $categoria)
+                                <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                            @endforeach
+                        </select>
+                        <x-input-error for="form.category_id" /> 
+        
+        
+                      
+        
+        
+                        <x-label for="imagenU">Imagen</x-label>
+                        <div class="w-full h-80 bg-gray-200 relative">
+                            
+                            <input type="file" accept="image/*" hidden id="imagenU" wire:model="form.imagen"
+                                wire:loading.attr="disabled" />
+                            <label for="imagenU"
+                                class="absolute bottom-2 right-2 bg-gray-700 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded">
+                                <i class="fa-solid fa-cloud-arrow-up mr-2"></i>SUBIR
+                            </label>
+                            
+                            @if ($form->imagen)
+                                <img src="{{$form->imagen->temporaryUrl()}}"
+                                    class="w-full h-full bg-center bg-cover bg-no-repeat" />
+                            @else
+                                 <img src="{{ $form->post->imagen}}" 
+                                    class="w-full h-full bg-center bg-cover bg-no-repeat" /> 
                             @endif
-                            <x-input-error for="imagen"></x-input-error>
-                            <input type="file" id="imagen" hidden accept="image/*" wire:model="imagen">
-                        </x-form>
+                        </div>
+                        <x-input-error for="form.imagen" />
+        
                     </x-slot>
-
                     <x-slot name="footer">
-                        <button wire:click="update" wire:loading.attr="disabled"
-                            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded">
-                            actualizar
-                        </button>
-                        <button wire:click="cancelar"
-                            class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-10 border border-blue-500 hover:border-transparent rounded">
-                            cancelar
-                        </button>
+                        <div class="flex flex-row-reverse">
+                            <button wire:click="update" wire:loading.attr="disabled"
+                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                                <i class="fas fa-edit"></i> EDITAR
+                            </button>
+        
+                            <button wire:click="cancelar"
+                                class="mr-2 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                <i class="fas fa-xmark"></i> CANCELAR
+                            </button>
+                        </div>
                     </x-slot>
                 </x-dialog-modal>
                 @endisset
 
 
         </div>
-    </x-app-layout>
+   
 </div>

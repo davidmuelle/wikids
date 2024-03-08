@@ -23,7 +23,7 @@ class PostFactory extends Factory
                 'titulo'=>ucfirst($this->faker->name()),
                 'subtitulo'=>$this->faker->name(),
                 'contenido'=>$this->faker->text(),
-                'imagen'=>'post/'.$this->faker->picsum('public/storage/posts',640,480,null,false),
+                'imagen'=>'/storage/posts/'.$this->faker->picsum('public/storage/posts',640,480,null,false),
                 'user_id'=>User::all()->random()->id,
                 'categoria_id'=>Categoria::all()->random()->id
             ];

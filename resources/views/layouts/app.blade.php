@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>WikiDs</title>
        
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -17,12 +17,11 @@
         <script src="https://cdn.tailwindcss.com"></script>
         <!-- Styles -->
         @livewireStyles
-        
     </head>
     <body class="font-sans antialiased">
         <x-banner />
 
-        <div class="min-h-screen bg-gradient-to-b from-neutral-900 via-stone-400 to-orange-400">
+        <div class="min-h-screen bg-gradient-to-b bg-fixed from-neutral-900 via-stone-400 to-orange-400">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->

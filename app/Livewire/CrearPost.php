@@ -38,6 +38,7 @@ class CrearPost extends Component
         $this->validate();
         $ruta=$this->imagen->store('posts');
         Post::create([
+            
             'titulo' => $this->titulo,
             'subtitulo'=>$this->subtitulo,
             'contenido'=>$this->contenido,

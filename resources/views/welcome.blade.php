@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="<?php echo asset('css/prueba.css'); ?>" type="text/css">
-    <title>Laravel</title>
+    <title>WikiDs</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
