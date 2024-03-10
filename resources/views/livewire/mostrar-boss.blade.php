@@ -8,15 +8,15 @@
         </button>
     
         
-        {{-- <button type="button" wire:click= "editar({{ $bosses[2]->id }})"
+         <button type="button" wire:click= "editar({{ $bosses[1]->id }})"
             class="inline-block rounded-full w-40 border border-lime-500 hover:border-transparent bg-lime-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal hover:text-lime-500  text-amber-50 shadow-lime-800 transition duration-150 ease-in-out hover:bg-lime-500 hover:shadow-amber-50 ">
             Actulizar boss
-        </button> --}}
+        </button> 
     </div>
     @endrole
     <x-dialog-modal wire:model="opencrear">
         <x-slot name="title">
-            {{ __('crear post') }}
+            {{ __('crear Boss') }}
         </x-slot>
 
         <x-slot name="content">
@@ -64,7 +64,7 @@
 
     <x-dialog-modal wire:model="openeditar">
         <x-slot name="title">
-            Actualizar Post
+            Actualizar Boss
         </x-slot>
         <x-slot name="content">
 
@@ -138,23 +138,23 @@
     <div 
         class="block rounded-lg  mt-15 shadow-secondary-1 dark:bg-surface-dark w-1/2 mx-auto bg-pink-50	 bg-opacity-50 dark:text-black text-surface">
         <div class="relative overflow-hidden bg-cover bg-no-repeat ">
-            {{-- <img class="rounded-t-lg w-full aspect-video"  loading="lazy" src="{{ $bosses[2]->imagen }}" alt="" /> --}}
+             <img class="rounded-t-lg w-full aspect-video"  loading="lazy" src="{{ $bosses[1]->imagen }}" alt="" /> 
         </div>
         <div class="p-6">
             <h2 class="mb-2 text-2xl text-center font-medium leading-tight">
-                {{-- {{ $bosses[2]->nombre }} --}}
+                {{ $bosses[1]->nombre }} 
             </h2>
             <h2  class="my-5 text-2xl ">Lore</h2>
 
             <hr  class=" h-1 mx-auto mb-4  border-0 rounded  dark:bg-gray-700">
             <p class="mb-4 text-base text-left" >
-                {{-- {{ $bosses[1]->lore }} --}}
+                {{ $bosses[1]->lore }} 
             </p>
             <h2  class="my-5 text-2xl">Ubicación</h2>
 
             <hr  class=" h-1 mx-auto mb-4  border-0 rounded  dark:bg-gray-700">
             <p class="text-base text-surface/75 text-left ">
-                {{-- {{ $bosses[1]->localizacion }} --}}
+                 {{ $bosses[1]->localizacion }}
             </p>
         </div>
     </div>

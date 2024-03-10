@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Boss extends Model
 {
     use HasFactory;
-    protected $fillable=["nombre","lore","localizacion","imagen"];
+    protected $fillable=["nombre","lore","localizacion","imagen","id"];
 }

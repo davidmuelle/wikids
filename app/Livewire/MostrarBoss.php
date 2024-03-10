@@ -22,22 +22,27 @@ class MostrarBoss extends Component
         return view('livewire.mostrar-boss' ,compact("bosses"));
     }
 
-    protected function rules():array {
-        return
-        [
+    // protected function rules():array {
+    //     return
+    //     [
+    //         'nombre' => ['required', 'string', 'min:3'],
+    //         'lore' => ['required', 'string', 'min:3'],
+    //         'localizacion' => ['required', 'string'],
+    //         'imagen' => ['required', 'max:2048']
+    //     ];
+    // }
+
+
+    public function crear(){
+        $this->validate( [
             'nombre' => ['required', 'string', 'min:3'],
             'lore' => ['required', 'string', 'min:3'],
             'localizacion' => ['required', 'string'],
             'imagen' => ['required', 'max:2048']
-
-        ];
-    }
-
-
-    public function crear(){
-        $this->validate();
+        ]);
+       
         $ruta=$this->imagen->store('boss');
-       Boss::create([
+        Boss::create([
             
             'nombre' => $this->nombre,
             'lore'=>$this->lore,
