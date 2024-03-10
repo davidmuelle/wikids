@@ -25,10 +25,10 @@
                         <div
                             class="bg-white shadow-lg rounded-lg bg-cover bg-center object-cover max-md:bg-[url('{{ $cancionn->imagen }}')]">
                             <div class="flex">
-                                <div class="max-w-80 overflow-hidden cursor-pointer">
-                                    <img class="w-full rounded max-md:hidden md:block hover:scale-125 transition-all duration-500"
+                                <div class="max-w-80  overflow-hidden cursor-pointer">
+                                    <img class="w-full object-cover rounded  max-md:hidden md:block hover:scale-125 transition-all duration-500"
                                     loading="lazy"  src="{{ $cancionn->imagen }}" alt="Album Pic">
-                                    <p>{{ $cancionn->imagen }}</p>
+                                    <p>{{ $cancionn->imagen }}</p> 
                                 </div>
                                 <div class="w-full p-8">
                                     <div class="flex justify-between ">
@@ -37,7 +37,7 @@
 
                                             {{-- <p>esto es {{$prueba}}</p>  --}}
 
-                                            <h3 class="text-2xl text-grey-darkest font-medium">
+                                            <h3 class="text-2xl max-md:backdrop-opacity-95 max-md:text-white text-grey-darkest font-medium">
                                                 {{ $cancionn->titulo }}
                                             </h3>
                                             <p class="text-sm text-grey mt-1">Ghost Stories</p>

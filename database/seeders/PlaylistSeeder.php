@@ -51,7 +51,7 @@ class PlaylistSeeder extends Seeder
 
         Playlist::create([
             "titulo"=>"Golem De Hierro",
-            "imagen"=>"/storage/golem.webp",
+            "imagen"=>"/storage/playlist/golem.webp",
             "cancion"=>"/storage/audio/golem_hierro.mp3"
         ]);
 
@@ -129,7 +129,7 @@ class PlaylistSeeder extends Seeder
 
         Playlist::create([
             "titulo"=>"Quelaag",
-            "imagen"=>"/storage/playlist/queelag.webp",
+            "imagen"=>"/storage/playlist/quelaag.webp",
             "cancion"=>"/storage/audio/queelag.mp3"
         ]);
 
@@ -141,7 +141,7 @@ class PlaylistSeeder extends Seeder
 
         Playlist::create([
             "titulo"=>"Sif",
-            "imagen"=>"/storage/playlist/sif.jpg",
+            "imagen"=>"/storage/playlist/sif.jpeg",
             "cancion"=>"/storage/audio/sif.mp3"
         ]);
 

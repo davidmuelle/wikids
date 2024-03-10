@@ -35,9 +35,11 @@ Route::middleware([
     Route::get('/boss',MostrarBoss::class)->name('Boss');
     Route::get('/playlist',MostrarPlaylist::class)->name('Playlist');
     
-     Route::get('/users',MostrarUser::class)->name('users');
+    
+    Route::group(['middleware' => ['role:admin']], function () {
+         Route::get('/users',MostrarUser::class)->name('users');
         
-  
+    });
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');

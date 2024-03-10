@@ -1,5 +1,6 @@
 <div>
-    <div class="relative overflow-x-auto w-1/3 mx-auto shadow-md sm:rounded-lg">
+   
+    <div class="relative overflow-x-auto w-1/3 mx-auto mt-24 shadow-md sm:rounded-lg">
         <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -10,13 +11,11 @@
                         Email
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Category
+                        Puesto
                     </th>
+                    
                     <th scope="col" class="px-6 py-3">
-                        Price
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        <span class="sr-only">Edit</span>
+                        acción
                     </th>
                 </tr>
             </thead>
@@ -32,15 +31,16 @@
                         {{$user->email}}
                     </td>
                     <td class="px-6 py-4">
-                        {{($user->getRoleNames()=='[]')? 'normal' : 'admin'}}
+                        {{($user->getRoleNames()=='[]')? 'Estándar' : 'Admin'}}
                     </td>
-                    <td class="px-6 py-4">
-                        $2999
-                    </td>
-                    <td class="px-6 py-4 text-right">
+                    
+                    <td class="px-6 py-4 ">
+                        @if ($user->getRoleNames()=='[]')
+                            
                         <button wire:click="borrar({{ $user->id }})">
-                                    borrar
+                                    Borrar
                                 </button>
+                        @endif
                     </td>
                 </tr>
                 @endforeach

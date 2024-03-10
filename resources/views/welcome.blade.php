@@ -850,7 +850,7 @@
                 @endauth
             </div>
         @endif
-        <div id="prueba" class="bg-gray-300 grid justify-items-center mt-16 w-3/5 overflow-hidden max-sm:w-96 max-sm:mx-auto max-md:justify-items-start  shadow-xl  sm:rounded-lg  h-1/2  ">
+        <div id="prueba" class="bg-gray-300 grid justify-items-center  w-3/5 overflow-hidden max-sm:w-96 max-sm:mx-auto max-md:justify-items-start  shadow-xl  sm:rounded-lg  h-1/3  ">
             <section class=" max-sm:w-1/2 max-sm:ml-10 max-sm:mx-left w-full rounded p-8">
                 <img id="img1" src="https://wallpapers.com/images/hd/black-knight-in-dark-souls-3-0c1yafwabtoqppgu.jpg"
                     alt="">
@@ -864,10 +864,9 @@
 
             </section>
             <h1 class="text-7xl	min-md:mx-auto max-sm:ml-10 pt-8 font-serif capitalize">wiki-DS</h1>
-            <section class="pt-8">
-                <p>Bienvenido a la wikipedia de Dark Souls</p>
-
-            </section>
+            <div class="pt-8 w-full mb-14 ">
+                <p class="text-center text-2xl	min-md:mx-auto max-sm:ml-10 pt-8 font-serif ">Si eres un apasionado de la saga Dark Souls esta es tu página</p>
+            </div>
            
         </div>
     </div>
