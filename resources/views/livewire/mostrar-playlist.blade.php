@@ -28,7 +28,7 @@
                                 <div class="max-w-80  overflow-hidden cursor-pointer">
                                     <img class="w-full object-cover rounded  max-md:hidden md:block hover:scale-125 transition-all duration-500"
                                     loading="lazy"  src="{{ $cancionn->imagen }}" alt="Album Pic">
-                                    <p>{{ $cancionn->imagen }}</p> 
+                                    {{-- <p>{{ $cancionn->imagen }}</p>  --}}
                                 </div>
                                 <div class="w-full p-8">
                                     <div class="flex justify-between ">
@@ -37,10 +37,10 @@
 
                                             {{-- <p>esto es {{$prueba}}</p>  --}}
 
-                                            <h3 class="text-2xl max-md:backdrop-opacity-95 max-md:text-white text-grey-darkest font-medium">
+                                            <h3 class="text-2xl  max-md:backdrop-opacity-95 max-md:text-white text-grey-darkest font-medium">
                                                 {{ $cancionn->titulo }}
                                             </h3>
-                                            <p class="text-sm text-grey mt-1">Ghost Stories</p>
+                                            
 
                                         </div>
 
@@ -68,8 +68,7 @@
                             </div>
                             <div class="mx-8 py-4">
                                 <div class="flex justify-between text-sm text-grey-darker">
-                                    <p>0:40</p>
-                                    <p>4:20</p>
+                                    
                                 </div>
                                 <div class="mt-1">
                                     <div class="h-1 bg-grey-dark rounded-full">

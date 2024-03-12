@@ -16,6 +16,8 @@ class MostrarBoss extends Component
 
     public bool $openeditar=false;
     public $imagen;
+
+    public $bossindice=1;
     public function render()
     {
          $bosses=Boss::all();
@@ -77,6 +79,24 @@ class MostrarBoss extends Component
         $this->cancelar();
         
     } 
+
+
+
+    public function delante()
+    {
+        $this->bossindice++;
+        if ($this->bossindice == 4) {
+            $this->bossindice = 1;
+        }
+    }
+
+    public function atras()
+    {
+        $this->bossindice--;
+        if ($this->bossindice < 1) {
+            $this->bossindice = 3;
+        }
+    }
 
 
 }

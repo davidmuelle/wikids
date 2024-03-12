@@ -14,6 +14,17 @@
         </button> 
     </div>
     @endrole
+    <div class="flex ml-10 mt-5 gap-8 ">
+
+        <button type="button" wire:click="atras"
+            class="mx-auto mb-8 inline-block rounded-full w-20 border border-lime-500 hover:border-transparent hover:bg-lime-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-lime-500  hover:text-amber-50 shadow-lime-800 transition duration-150 ease-in-out  hover:shadow-amber-50 ">
+            << </button>
+                <button type="button" wire:click="delante"
+                    class=" mx-auto mb-8 inline-block rounded-full w-20 border border-lime-500 hover:border-transparent hover:bg-lime-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-lime-500  hover:text-amber-50 shadow-lime-800 transition duration-150 ease-in-out  hover:shadow-amber-50 ">
+                    >>
+                </button>
+
+    </div>
     <x-dialog-modal wire:model="opencrear">
         <x-slot name="title">
             {{ __('crear Boss') }}
@@ -130,7 +141,7 @@
 
 
 
-
+   
 
 
 
@@ -138,23 +149,26 @@
     <div 
         class="block rounded-lg  mt-15 shadow-secondary-1 dark:bg-surface-dark w-1/2 mx-auto bg-pink-50	 bg-opacity-50 dark:text-black text-surface">
         <div class="relative overflow-hidden bg-cover bg-no-repeat ">
-             <img class="rounded-t-lg w-full aspect-video"  loading="lazy" src="{{ $bosses[1]->imagen }}" alt="" /> 
+             <img class="rounded-t-lg w-full aspect-video"  loading="lazy" src="{{ $bosses[$bossindice]->imagen }}" alt="" /> 
         </div>
+        {{-- <p>
+            {{$bosses[$bossindice]->imagen}}  
+        </p> --}}
         <div class="p-6">
             <h2 class="mb-2 text-2xl text-center font-medium leading-tight">
-                {{ $bosses[1]->nombre }} 
+                {{ $bosses[$bossindice]->nombre }} 
             </h2>
             <h2  class="my-5 text-2xl ">Lore</h2>
 
             <hr  class=" h-1 mx-auto mb-4  border-0 rounded  dark:bg-gray-700">
             <p class="mb-4 text-base text-left" >
-                {{ $bosses[1]->lore }} 
+                {{ $bosses[$bossindice]->lore }} 
             </p>
             <h2  class="my-5 text-2xl">Ubicación</h2>
 
             <hr  class=" h-1 mx-auto mb-4  border-0 rounded  dark:bg-gray-700">
             <p class="text-base text-surface/75 text-left ">
-                 {{ $bosses[1]->localizacion }}
+                 {{ $bosses[$bossindice]->localizacion }}
             </p>
         </div>
     </div>
